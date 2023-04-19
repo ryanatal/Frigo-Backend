@@ -1,0 +1,143 @@
+@import "../../styles/styles.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+.cover-page {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.title-for-Landing{
+    font-size: 6vw;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+}
+
+#content {
+  position: relative;
+  text-align: center;
+  border-radius: 20px;
+  width: 50%;
+  height: 50%;
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  margin-left: 10%;
+}
+
+.subtitle-for-Landing {
+  font-size: 2vw;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+}
+
+.IngredientsButton {
+    background-color: #de1f1f;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-size: 2vw;
+    font-weight: 600;
+    cursor: pointer;
+    width: 15vw;
+    margin-top: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     &:hover {
+    background-color: #650f0f;
+  }
+}
+
+
+//arrows
+.arrow{
+    //bottom middle
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+#more-arrows {
+	width: 75px;
+  height: 65px;
+  
+  &:hover {
+    
+    polygon {
+      fill: #FFF;
+      transition: all .2s ease-out;
+
+      &.arrow-bottom {
+        transform: translateY(-18px);
+      }
+
+      &.arrow-top {
+        transform: translateY(18px);
+      }
+      
+    }
+  
+  }
+  
+}
+
+polygon {
+  fill: #FFF;
+  transition: all .2s ease-out;
+    
+  &.arrow-middle {
+	  opacity: 0.75;
+	}
+
+	&.arrow-top {
+	  opacity: 0.5
+	}
+	 
+}
+
+
+@media only screen and (max-width: 992px) {
+  #content {
+    width: 70%;
+    height: 40%;
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .subtitle-for-Landing {
+    display:none;
+  }
+
+  .cover-page{
+    justify-content: center;
+  }
+
+  #content {
+    width: 80%;
+    height: 40%;
+    padding: 20px;
+    margin: 0;
+  }
+  .IngredientsButton{
+    font-size: 3vw;
+    width: 23vw;
+  }
+ }
