@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
-    "build": "netlify-lambda build src"
+    "build": "netlify deploy --prod"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +19,8 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",
+    "netlify-cli": "^14.2.0",
+    "netlify-lambda": "^2.0.16",
     "serverless-http": "^3.2.0"
   },
   "description": ""
