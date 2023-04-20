@@ -5,11 +5,12 @@ import cors from "cors";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
-import { verifyToken } from "./middleware/auth.js";
+import { verifyToken } from "../middleware/auth.js";
+import serverless from 'serverless-http';
 
-import authRoutes from "./routes/auth.js";
-import pantryRoutes from "./routes/pantry.js";
-import shoppingListRoutes from "./routes/shoppinglist.js";
+import authRoutes from "../routes/auth.js";
+import pantryRoutes from "../routes/pantry.js";
+import shoppingListRoutes from "../routes/shoppinglist.js";
 
 /* CONFIGURATIONS */
 dotenv.config();
@@ -43,3 +44,7 @@ mongoose
         )
     )
     .catch((error) => console.log(error.message));
+
+
+const handler = serverless(app);
+export { handler };
