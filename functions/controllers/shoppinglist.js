@@ -35,18 +35,18 @@ export const addItemToPantry = async (req, res) => {
         if (!pantry) {
             const newPantry = new Pantry({
                 userId: user._id,
-                items: [item],
+                ingredients: [item],
             });
             await newPantry.save();
             res.status(200).json(newPantry);
         }
         else {
-            const itemExists = pantry.items.find((i) => i.name === item.name);
+            const itemExists = pantry.ingredients.find((i) => i.id === item.id);
             if (itemExists) {
                 res.status(200).json(pantry);
             }
             else {
-                pantry.items.push(item);
+                pantry.ingredients.push(item);
                 await pantry.save();
                 res.status(200).json(pantry);
             }
